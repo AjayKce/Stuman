@@ -8,7 +8,6 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.servlet.jsp.PageContext;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.student.stuman.email.ContactUs;
-import com.student.stuman.email.ForgetSendMail;
 import com.student.stuman.email.SendMail;
 import com.student.stuman.model.User;
 import com.student.stuman.salt.RandomString;
@@ -45,11 +43,8 @@ public class UserController {
 	
 	RandomString salt = new RandomString();
 	
-	SendMail sendMail = new SendMail();
-	
 	ContactUs contact = new ContactUs();
 	
-	ForgetSendMail sendForgetMail = new ForgetSendMail();
 	
 	@RequestMapping("/")
 	public String about() {
@@ -200,6 +195,7 @@ public class UserController {
 			request.setAttribute("success","Your password is successfully resetted");
 			return "login";
 		}
+		SendMail sendMail = new SendMail();
 		theUser.setValidate(salt.getSaltString());
 		theUser.setForgetPassword(salt.getSaltString());
 		userService.addStudent(theUser);
@@ -288,6 +284,7 @@ public class UserController {
 			return "redirect:student/home";
 		}
 		else {
+			SendMail sendMail = new SendMail();
 			String email = request.getParameter("email");
 			User user = userService.getExistingUser(email);
 			if(user==null) {
@@ -295,10 +292,11 @@ public class UserController {
 			}
 			else {
 				String forgetCode = user.getForgetPassword();
-				if(sendForgetMail.send(user.getEmail(),forgetCode)) {
+				if(sendMail.sendf(user.getEmail(), forgetCode)) {
 					return "forgetPasswordSuccessForm";
 				}
 				else {
+					request.setAttribute("authenticationError","Server Error");
 					return "login";
 				}
 			}

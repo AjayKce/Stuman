@@ -65,7 +65,11 @@
                         <% if(request.getAttribute("success")!=null){out.println(request.getAttribute("success"));}%>
                     </p>
                     <p class="error" align="center">
-                        <% if(request.getAttribute("authenticationError")!=null){out.println(request.getAttribute("authenticationError"));}%>
+                        <% 
+                        if(request.getAttribute("authenticationError")!=null){
+                        	out.println(request.getAttribute("authenticationError"));
+                        	}
+                        %>
                     </p><br>
                     <form method="post" class="loginForm" action="checkLogin" class="form col-lg-12 col-md-12 col-xs-12 col-sm-12">
                         <span class="col-lg-12 col-md-12 col-xs-12 col-sm-12"><br></span>
