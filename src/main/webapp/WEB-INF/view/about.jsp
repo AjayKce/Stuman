@@ -300,7 +300,7 @@
       </div>
       <div style="background-color:#fff" class="well">
       <p align="center"><b> Download</b></p>
-      <p><a href="#">Download APK</a></p>
+      <p><a href="/apk/app.apk" download>Download APK</a></p>
       </div>
       </div>
     <div  class=" well col-sm-7">

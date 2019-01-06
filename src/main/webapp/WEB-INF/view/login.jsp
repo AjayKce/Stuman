@@ -43,7 +43,7 @@
                                     <li>
                                     <a href="${pageContext.request.contextPath}/"><span class="glyphicon glyphicon-floppy-disk"></span> ABOUT</a>
                                     </li>
-                                    <li><a href=""><span class="glyphicon glyphicon-download"></span> DOWNLOAD</a></li>
+                                    <li><a href="/apk/app.apk" download><span class="glyphicon glyphicon-download"></span> DOWNLOAD</a></li>
                                     <li><a href="signup"><span class="glyphicon glyphicon-user"></span> SIGN-UP</a></li>
                                 </ul>
                             </div>

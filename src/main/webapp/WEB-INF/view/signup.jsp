@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<link href="${pageContext.request.contextPath}/resources/stylesheet/signup.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
 		<style>
 			.error {
@@ -38,7 +37,7 @@
                                     <li>
                                     <a href="${pageContext.request.contextPath}/"><span class="glyphicon glyphicon-floppy-disk"></span> ABOUT</a>
                                     </li>
-                                    <li><a href=""><span class="glyphicon glyphicon-download"></span> DOWNLOAD</a></li>
+                                    <li><a href="/apk/app.apk" download><span class="glyphicon glyphicon-download"></span> DOWNLOAD</a></li>
                                     <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
                                 </ul>
 							</div>
