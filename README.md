@@ -25,8 +25,10 @@ database. This app is also pay attension to mobile users as i have designed this
 
 ### Test Link
 <a href="http://stumankce.herokuapp.com">Click Here</a>
-Test Username : <b>ajay102</a>
-Test Password : <b>AJAYajay123!</a>
+
+Test Username : <b>ajay102</b>
+
+Test Password : <b>AJAYajay123!</b>
 
 ## Screen Shots
 
