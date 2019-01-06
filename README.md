@@ -18,7 +18,7 @@ Our mission is to safeguard the patient in the hospital for the purpose immediat
 Our vision is to make new web apps based on this app inorder to focus in colleges as well as schools, railway 
 , bustand ,airway , IIT, NIT and for the purpose of E-Commerce
 
-#Technology
+# Technology
 Guys I have used Spring MVC which is a sub source of SPRING-BOOT , Hibernate JPA for database Integrity and PostgreSQL as 
 database. This app is also pay attension to mobile users as i have designed this web app using front technology like <b>HTML</b>
 , <b>CSS</b>, <b>BOOTSTRAP</b> and <b>JQUERY</b>. I have attached the APK in the navigation bar desciption.
