@@ -1,0 +1,23 @@
+.signUpHeader{
+    border-radius :25px 0px 25px 0px;
+    background-color:#ffeaa7;
+    padding:20px;
+    margin:0px;
+}
+.signUpForm{
+	border-radius:15px;
+    background-color: #FFC107;
+}
+
+label{
+	cursor:pointer;
+	color:white;
+}
+
+.table th, .table td { 
+    border-top: none !important; 
+}
+
+li a,.navbar-brand {
+      color: #fff !important;
+  }
