@@ -25,7 +25,6 @@ public class User {
 	@Column(name="last_name")
 	private String lastName;
 	
-	@Pattern(regexp="^[a-z][a-z0-9.]+[@]{1}[a-z]+[.]{1}[a-z.]+$",message="Email is invalid")
 	@Column(name="email")
 	private String email;
 	
