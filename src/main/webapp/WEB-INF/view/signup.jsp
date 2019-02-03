@@ -88,7 +88,7 @@
 									<form:errors path="email" cssClass="error" />
 									<span class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<form:input path="email" cssClass="form-control" placeholder="enter email" />
+									<form:input path="email" cssClass="form-control" placeholder="enter email" required="required"/>
 									</span>
 								</span>
 							</span>
