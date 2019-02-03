@@ -18,11 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.student.stuman.email.ContactUs;
-import com.student.stuman.email.SendMail;
 import com.student.stuman.model.User;
 import com.student.stuman.salt.RandomString;
+import com.student.stuman.service.NotificationService;
 import com.student.stuman.service.StudentService;
 import com.student.stuman.service.UserService;
 
@@ -41,9 +39,10 @@ public class UserController {
 	@Autowired
 	HttpServletRequest request;
 	
-	RandomString salt = new RandomString();
+	@Autowired
+	NotificationService emailService;
 	
-	ContactUs contact = new ContactUs();
+	RandomString salt = new RandomString();
 	
 	
 	@RequestMapping("/")
@@ -66,7 +65,13 @@ public class UserController {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String comment = request.getParameter("comments");
-		contact.send(name, email, comment);
+		try {
+		emailService.sendContactNotification(name, email, comment);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
 		return "sendConfirm";
 	}
 	
@@ -195,20 +200,20 @@ public class UserController {
 			request.setAttribute("success","Your password is successfully resetted");
 			return "login";
 		}
-		SendMail sendMail = new SendMail();
 		theUser.setValidate(salt.getSaltString());
 		theUser.setForgetPassword(salt.getSaltString());
 		userService.addStudent(theUser);
 		String email = theUser.getEmail();
 		int id=userService.getUserId(theUser.getUsername(),theUser.getPassword());
 		String validator = userService.getValidator(id);
-		if(sendMail.send(email,id,validator)) {
+		try {
+			emailService.sendNotification(email, id, validator);
 			request.setAttribute("passError",null);
 			request.setAttribute("emailError",null );
 			request.setAttribute("userError",null );
 			return "signUpSuccessForm";
 		}
-		else {
+		catch(Exception e) {
 			request.setAttribute("emailError","Network Slow please try after sometimes" );
 			return "signup";
 		}
@@ -284,7 +289,6 @@ public class UserController {
 			return "redirect:student/home";
 		}
 		else {
-			SendMail sendMail = new SendMail();
 			String email = request.getParameter("email");
 			User user = userService.getExistingUser(email);
 			if(user==null) {
@@ -292,10 +296,12 @@ public class UserController {
 			}
 			else {
 				String forgetCode = user.getForgetPassword();
-				if(sendMail.sendf(user.getEmail(), forgetCode)) {
-					return "forgetPasswordSuccessForm";
+				try {
+				emailService.sendf(user.getEmail(), forgetCode);
+				return "forgetPasswordSuccessForm";
 				}
-				else {
+				catch(Exception e) {
+					System.out.println(e);
 					request.setAttribute("authenticationError","Server Error");
 					return "login";
 				}

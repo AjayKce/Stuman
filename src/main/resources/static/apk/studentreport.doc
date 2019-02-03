@@ -1,0 +1,63 @@
+    
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    
+    
+    <html>
+     <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>Sample Hello World Example</title>
+     </head>
+    <body>
+     <table cellpadding="1"  cellspacing="0" border="1" bordercolor="gray">
+      <thead>
+       <th>first name</th>
+       <th>last name</th>
+       <th>roll no</th>
+       <th>gender</th>
+       <th>blood group</th>
+       <th>department</th>
+       <th>current year</th>
+       <th>current semester</th>
+       <th>email</th>
+       <th>phone number</th>
+       <th>date-of-birth</th>
+       <th>pancard number</th>
+       <th>account number</th>
+       <th>ifsc code</th>
+       <th>aadhar number</th>
+       <th>voter id</th>
+       <th>parent name</th>
+       <th>parent gender</th>
+       <th>parent-phone-number</th>
+       <th>address</th>
+       <th>pincode</th>
+      </thead>
+      
+       <tr>
+       		<td>ArunDavaan</td>
+       		<td>govda</td>
+       		<td>16P102</td>
+       		<td>male</td>
+       		<td>O-</td>
+       		<td>CSE</td>
+       		<td>I</td>
+       		<td>III</td>
+       		<td>arun@gmail.com</td>
+       		<td>9488977981</td>
+       		<td>27-02-1998
+</td>
+       		<td></td>
+       		<td></td>
+       		<td></td>
+       		<td></td>
+       		<td></td>
+       		<td>vijayakumar</td>
+       		<td>male</td>
+       		<td>9486577981</td>
+       		<td>Elengikaalavilai Edaicode</td>
+       		<td>629152</td>
+      </tr>
+      
+     </table>
+    </body>
+    </html>
